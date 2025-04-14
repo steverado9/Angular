@@ -18,6 +18,6 @@ export class TasksComponent {
   ngOnInit(): void {
     //we use it inside here cos this fires off immediately
     this.taskService.getTasks().subscribe((tasks) => this.
-    tasks = tasks);
+    tasks = tasks); 
   }
 }
