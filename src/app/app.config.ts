@@ -1,13 +1,21 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, Routes } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
+import { TasksComponent } from './componets/tasks/tasks.component';
+import { AboutComponent } from './componets/about/about.component';
 
-import { routes } from './app.routes';
+
+
+
+export const routes: Routes = [
+  { path: '', component: TasksComponent },
+  { path: 'about', component: AboutComponent }
+];
 
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }), 
     provideRouter(routes), 
-    provideHttpClient()]
+    provideHttpClient()],
 };
